@@ -1,1038 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Train With Abby | Fitness Coaching</title>
-
-  <meta name="description" content="Train With Abby - Personal fitness coaching, strength training, weight loss and fitness guidance.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-      background: #fffdf8;
-      color: #164b3d;
-      line-height: 1.6;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    /* HEADER */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 253, 248, 0.96);
-      border-bottom: 1px solid #e6eee9;
-    }
-
-    .nav {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: "Manrope", sans-serif;
-      font-size: 27px;
-      font-weight: 800;
-      color: #087f61;
-    }
-
-    .logo span {
-      color: #f47b35;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-weight: 600;
-      color: #285e50;
-    }
-
-    .nav-links a:hover {
-      color: #f47b35;
-    }
-
-    .nav-btn {
-      background: #087f61;
-      color: white !important;
-      padding: 12px 20px;
-      border-radius: 30px;
-    }
-
-    .menu {
-      display: none;
-      width: 48px;
-      height: 48px;
-      border: 0;
-      border-radius: 50%;
-      background: #e0f4ed;
-      color: #087f61;
-      font-size: 25px;
-    }
-
-    /* HERO */
-
-    .hero {
-      padding: 80px 0;
-      background:
-        radial-gradient(circle at 90% 10%, #ffe4d2 0, transparent 25%),
-        radial-gradient(circle at 10% 80%, #dff5ed 0, transparent 28%),
-        #fffdf8;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: #e2f5ee;
-      color: #087f61;
-      padding: 8px 15px;
-      border-radius: 30px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(45px, 6vw, 72px);
-      line-height: 1.02;
-      color: #124d3e;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 span {
-      color: #f47b35;
-    }
-
-    .hero p {
-      max-width: 550px;
-      font-size: 18px;
-      color: #5d716a;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 24px;
-      border-radius: 35px;
-      font-weight: 700;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: #087f61;
-      color: white;
-      box-shadow: 0 10px 25px rgba(8, 127, 97, 0.2);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: #05684f;
-    }
-
-    .btn-secondary {
-      border: 2px solid #087f61;
-      color: #087f61;
-    }
-
-    .btn-secondary:hover {
-      background: #e2f5ee;
-    }
-
-    .hero-image {
-      position: relative;
-    }
-
-    .hero-image img {
-      height: 570px;
-      border-radius: 35px;
-      box-shadow: 0 25px 60px rgba(20, 75, 61, 0.18);
-    }
-
-    .floating-card {
-      position: absolute;
-      bottom: 25px;
-      left: -25px;
-      background: white;
-      padding: 18px 22px;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-      font-weight: 700;
-    }
-
-    .floating-card span {
-      display: block;
-      color: #f47b35;
-      font-size: 14px;
-    }
-
-    /* STATS */
-
-    .stats {
-      padding: 35px 0;
-    }
-
-    .stats-box {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      background: #0d9b74;
-      color: white;
-      border-radius: 30px;
-      overflow: hidden;
-    }
-
-    .stat {
-      text-align: center;
-      padding: 35px 20px;
-      border-right: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .stat:last-child {
-      border-right: 0;
-    }
-
-    .stat h3 {
-      font-family: "Manrope", sans-serif;
-      font-size: 42px;
-    }
-
-    .stat p {
-      font-size: 17px;
-      opacity: 0.9;
-    }
-
-    /* GENERAL */
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 50px;
-    }
-
-    .section-heading h2 {
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(34px, 5vw, 50px);
-      color: #124d3e;
-      margin-bottom: 15px;
-    }
-
-    .section-heading p {
-      color: #687a73;
-      font-size: 17px;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: #eff9f5;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-image img {
-      height: 520px;
-      border-radius: 30px;
-    }
-
-    .about-content h2 {
-      font-family: "Manrope", sans-serif;
-      font-size: 46px;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .about-content p {
-      color: #60736b;
-      margin-bottom: 18px;
-      font-size: 17px;
-    }
-
-    .check-list {
-      list-style: none;
-      margin: 25px 0;
-    }
-
-    .check-list li {
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .check-list li::before {
-      content: "✓";
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      background: #d9f2e9;
-      color: #087f61;
-      margin-right: 10px;
-    }
-
-    /* SERVICES */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card {
-      padding: 30px;
-      background: white;
-      border: 1px solid #e2ebe7;
-      border-radius: 25px;
-      transition: 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 18px 40px rgba(20, 75, 61, 0.1);
-    }
-
-    .icon {
-      width: 55px;
-      height: 55px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 16px;
-      background: #e0f4ed;
-      font-size: 25px;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      color: #71817b;
-    }
-
-    /* PROGRAMS */
-
-    .programs {
-      background: #fff4eb;
-    }
-
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .program {
-      background: white;
-      border-radius: 28px;
-      padding: 35px;
-      border: 1px solid #f0dfd2;
-    }
-
-    .program.featured {
-      border: 2px solid #f47b35;
-      transform: translateY(-8px);
-    }
-
-    .program small {
-      color: #f47b35;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .program h3 {
-      font-family: "Manrope", sans-serif;
-      font-size: 28px;
-      margin: 10px 0;
-    }
-
-    .program p {
-      color: #6d7974;
-      margin-bottom: 22px;
-    }
-
-    .program ul {
-      list-style: none;
-      margin-bottom: 25px;
-    }
-
-    .program li {
-      margin-bottom: 10px;
-    }
-
-    .program li::before {
-      content: "✓";
-      color: #087f61;
-      font-weight: bold;
-      margin-right: 8px;
-    }
-
-    /* WHY */
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .why-card {
-      background: #f1f8f5;
-      border-radius: 25px;
-      padding: 30px;
-    }
-
-    .why-card h3 {
-      margin: 12px 0 8px;
-      font-size: 22px;
-    }
-
-    .why-card p {
-      color: #687a73;
-    }
-
-    /* TESTIMONIALS */
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .testimonial {
-      padding: 30px;
-      border-radius: 25px;
-      background: white;
-      border: 1px solid #e4ebe8;
-    }
-
-    .stars {
-      color: #f47b35;
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-
-    .testimonial p {
-      color: #596c65;
-      margin-bottom: 20px;
-    }
-
-    .testimonial strong {
-      color: #164b3d;
-    }
-
-    /* FAQ */
-
-    .faq {
-      background: #eff9f5;
-    }
-
-    .faq-container {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    details {
-      background: white;
-      margin-bottom: 12px;
-      border-radius: 18px;
-      padding: 20px 24px;
-      border: 1px solid #dce9e4;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 700;
-      color: #174f40;
-    }
-
-    details p {
-      color: #687a73;
-      padding-top: 15px;
-    }
-
-    /* CTA */
-
-    .final-cta {
-      padding: 90px 0;
-    }
-
-    .cta-box {
-      background: #087f61;
-      color: white;
-      border-radius: 35px;
-      padding: 70px 30px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-box::before {
-      content: "";
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-      top: -100px;
-      right: -50px;
-    }
-
-    .cta-box h2 {
-      position: relative;
-      font-family: "Manrope", sans-serif;
-      font-size: clamp(35px, 5vw, 55px);
-      margin-bottom: 15px;
-    }
-
-    .cta-box p {
-      position: relative;
-      max-width: 600px;
-      margin: 0 auto 25px;
-      opacity: 0.9;
-      font-size: 18px;
-    }
-
-    .cta-box .btn {
-      position: relative;
-      background: #f47b35;
-      color: white;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #123f34;
-      color: white;
-      padding: 45px 0 25px;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: center;
-    }
-
-    footer .logo {
-      color: white;
-    }
-
-    footer p {
-      color: #c2d5cf;
-    }
-
-    .copyright {
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      margin-top: 30px;
-      padding-top: 20px;
-      color: #abc1ba;
-      font-size: 14px;
-    }
-
-    /* FLOATING WHATSAPP */
-
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 999;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #25D366;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 78px;
-        left: 0;
-        width: 100%;
-        background: #fffdf8;
-        padding: 25px;
-        flex-direction: column;
-        align-items: stretch;
-        border-bottom: 1px solid #e5ece9;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 10px;
-      }
-
-      .nav-btn {
-        text-align: center;
-      }
-
-      .menu {
-        display: block;
-      }
-
-      .hero {
-        padding: 50px 0;
-      }
-
-      .hero-grid,
-      .about-grid,
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-image img {
-        height: 450px;
-      }
-
-      .floating-card {
-        left: 15px;
-      }
-
-      .stats-box {
-        grid-template-columns: 1fr;
-      }
-
-      .stat {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-      }
-
-      .stat:last-child {
-        border-bottom: 0;
-      }
-
-      .services-grid,
-      .program-grid,
-      .testimonial-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .program.featured {
-        transform: none;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .about-image img {
-        height: 430px;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      .logo {
-        font-size: 23px;
-      }
-
-      .hero h1 {
-        font-size: 44px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero-image img {
-        height: 390px;
-      }
-
-      .section-heading h2,
-      .about-content h2 {
-        font-size: 36px;
-      }
-
-      .stat h3 {
-        font-size: 38px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Train With Abby | Fitness Coaching</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#fffdf8;color:#164b3d;line-height:1.6}
+a{text-decoration:none}
+img{width:100%;display:block}
+.container{width:90%;max-width:1100px;margin:auto}
+
+header{
+position:sticky;top:0;z-index:99;
+background:#fffdf8;border-bottom:1px solid #e5eee9
+}
+nav{
+min-height:75px;display:flex;align-items:center;
+justify-content:space-between
+}
+.logo{font-size:25px;font-weight:800;color:#087f61}
+.logo span{color:#f47b35}
+
+.nav-links{display:flex;gap:25px;list-style:none;align-items:center}
+.nav-links a{color:#285e50;font-weight:bold}
+.nav-btn{background:#087f61;color:white!important;padding:11px 18px;border-radius:25px}
+
+.menu{
+display:none;border:0;background:#dff4ec;color:#087f61;
+font-size:25px;width:45px;height:45px;border-radius:50%
+}
+
+.hero{
+padding:75px 0;
+background:linear-gradient(135deg,#fffdf8,#e9f8f2)
+}
+.hero-grid{
+display:grid;grid-template-columns:1fr 1fr;
+gap:50px;align-items:center
+}
+.tag{
+display:inline-block;background:#dff4ec;color:#087f61;
+padding:8px 15px;border-radius:30px;font-weight:bold;
+margin-bottom:18px
+}
+h1{
+font-size:clamp(45px,7vw,70px);
+line-height:1.05;margin-bottom:20px
+}
+h1 span{color:#f47b35}
+.hero p{font-size:18px;color:#60736b;margin-bottom:25px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+display:inline-block;padding:14px 22px;border-radius:30px;
+font-weight:bold
+}
+.primary{background:#087f61;color:white}
+.secondary{border:2px solid #087f61;color:#087f61}
+
+.hero-img{
+height:520px;object-fit:cover;border-radius:30px
+}
+
+section{padding:75px 0}
+.heading{text-align:center;max-width:700px;margin:0 auto 40px}
+.heading h2{font-size:42px;line-height:1.1;margin-bottom:12px}
+.heading p{color:#687a73}
+
+.stats{padding:30px 0}
+.stats-box{
+display:grid;grid-template-columns:repeat(3,1fr);
+background:#0d9b74;color:white;border-radius:28px;overflow:hidden
+}
+.stat{text-align:center;padding:30px;border-right:1px solid #ffffff33}
+.stat:last-child{border:0}
+.stat h2{font-size:40px}
+
+.about{background:#eff9f5}
+.about-grid{
+display:grid;grid-template-columns:1fr 1fr;
+gap:50px;align-items:center
+}
+.about-img{height:480px;object-fit:cover;border-radius:28px}
+.about h2{font-size:42px;line-height:1.1;margin-bottom:18px}
+.about p{color:#60736b;margin-bottom:15px}
+.checks{list-style:none;margin:20px 0}
+.checks li{margin:10px 0;font-weight:bold}
+.checks li:before{content:"✓";color:#087f61;margin-right:10px}
+
+.cards{
+display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+}
+.card{
+background:white;border:1px solid #e2ebe7;
+padding:28px;border-radius:22px
+}
+.card .icon{font-size:30px;margin-bottom:12px}
+.card h3{margin-bottom:8px}
+.card p{color:#687a73}
+
+.programs{background:#fff3e9}
+.program{
+background:white;border-radius:25px;padding:30px;
+border:1px solid #eadfd7
+}
+.program h3{font-size:27px;margin:8px 0}
+.program small{color:#f47b35;font-weight:bold}
+.program ul{list-style:none;margin:18px 0}
+.program li{margin:8px 0}
+.program li:before{content:"✓";color:#087f61;margin-right:8px}
+.featured{border:2px solid #f47b35}
+
+.testimonials{background:#f7faf8}
+
+.faq{background:#eff9f5}
+.faq-box{max-width:800px;margin:auto}
+details{
+background:white;padding:20px;margin:10px 0;
+border-radius:16px
+}
+summary{font-weight:bold;cursor:pointer}
+details p{color:#687a73;padding-top:12px}
+
+.cta{padding:75px 0}
+.cta-box{
+background:#087f61;color:white;text-align:center;
+padding:60px 25px;border-radius:30px
+}
+.cta-box h2{font-size:45px;margin-bottom:12px}
+.cta-box p{margin-bottom:25px}
+.cta-box .btn{background:#f47b35;color:white}
+
+footer{
+background:#123f34;color:white;text-align:center;padding:40px 0
+}
+footer .logo{color:white}
+footer p{color:#c2d5cf;margin-top:8px}
+
+.whatsapp{
+position:fixed;right:18px;bottom:18px;
+width:58px;height:58px;border-radius:50%;
+background:#25d366;color:white;
+display:flex;align-items:center;justify-content:center;
+font-size:25px;z-index:100
+}
+
+@media(max-width:800px){
+.menu{display:block}
+.nav-links{
+display:none;position:absolute;top:75px;left:0;
+width:100%;background:#fffdf8;
+padding:20px;flex-direction:column
+}
+.nav-links.active{display:flex}
+.hero-grid,.about-grid{grid-template-columns:1fr}
+.cards{grid-template-columns:1fr 1fr}
+.hero-img{height:430px}
+.stats-box{grid-template-columns:1fr}
+.stat{border-right:0;border-bottom:1px solid #ffffff33}
+}
+
+@media(max-width:550px){
+.logo{font-size:22px}
+.hero{padding:50px 0}
+.hero h1{font-size:44px}
+.hero p{font-size:16px}
+.buttons{flex-direction:column}
+.btn{text-align:center;width:100%}
+.hero-img{height:390px}
+.cards{grid-template-columns:1fr}
+.heading h2,.about h2{font-size:35px}
+.cta-box h2{font-size:38px}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-
-  <header>
-    <div class="container nav">
-
-      <a href="#home" class="logo">
-        Train With <span>Abby</span>
-      </a>
-
-      <button class="menu" onclick="toggleMenu()">
-        ☰
-      </button>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#faq">FAQ</a></li>
-
-        <li>
-          <a
-            class="nav-btn"
-            href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I'm%20interested%20in%20your%20fitness%20coaching.%20I'd%20like%20to%20know%20more%20about%20the%20programs%20and%20how%20I%20can%20get%20started."
-            target="_blank">
-            Start Training
-          </a>
-        </li>
-      </ul>
-
-    </div>
-  </header>
-
-
-  <!-- HERO -->
-
-  <main>
-
-    <section class="hero" id="home">
-
-      <div class="container hero-grid">
-
-        <div>
-
-          <span class="eyebrow">
-            PERSONAL FITNESS COACHING
-          </span>
-
-          <h1>
-            Build Strength.<br>
-            Build <span>Confidence.</span>
-          </h1>
-
-          <p>
-            Your body deserves a plan that works for you.
-            Train smarter, stay consistent and become stronger
-            with personalized fitness guidance from Abby.
-          </p>
-
-          <div class="buttons">
-
-            <a
-              class="btn btn-primary"
-              href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I'm%20interested%20in%20your%20fitness%20coaching.%20I'd%20like%20to%20know%20more%20about%20the%20programs%20and%20how%20I%20can%20get%20started."
-              target="_blank">
-              Start Your Journey →
-            </a>
-
-            <a class="btn btn-secondary" href="#programs">
-              Explore Programs
-            </a>
-
-          </div>
-
-        </div>
-
-        <div class="hero-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85"
-            alt="Fitness training">
-
-          <div class="floating-card">
-            <span>YOUR GOAL</span>
-            Train. Improve. Repeat. 💪
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- STATS -->
-
-    <section class="stats">
-
-      <div class="container">
-
-        <div class="stats-box">
-
-          <div class="stat">
-            <h3>100%</h3>
-            <p>Goal Focused</p>
-          </div>
-
-          <div class="stat">
-            <h3>1:1</h3>
-            <p>Personal Support</p>
-          </div>
-
-          <div class="stat">
-            <h3>24/7</h3>
-            <p>Motivation & Guidance</p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section class="about" id="about">
-
-      <div class="container about-grid">
-
-        <div class="about-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=85"
-            alt="Personal fitness coaching">
-
-        </div>
-
-        <div class="about-content">
-
-          <span class="eyebrow">MEET ABBY</span>
-
-          <h2>
-            Fitness is more than just a workout.
-          </h2>
-
-          <p>
-            Train With Abby is built around helping people
-            create healthier habits, build strength and feel
-            more confident in their bodies.
-          </p>
-
-          <p>
-            Whether you're just starting your fitness journey
-            or looking to take your training to another level,
-            your workouts can be structured around your goals.
-          </p>
-
-          <ul class="check-list">
-            <li>Personalized training guidance</li>
-            <li>Simple and practical workouts</li>
-            <li>Accountability and motivation</li>
-            <li>Progress-focused approach</li>
-          </ul>
-
-          <a
-            class="btn btn-primary"
-            href="https://wa.me/2348030425401?text=Hi%20Abby!%20I'd%20like%20to%20learn%20more%20about%20your%20fitness%20coaching."
-            target="_blank">
-            Talk With Abby
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section id="services">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <span class="eyebrow">WHAT I OFFER</span>
-
-          <h2>
-            Training designed around you.
-          </h2>
-
-          <p>
-            Whether your goal is to lose weight, get stronger
-            or simply become more active, there's a plan for you.
-          </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-          <div class="service-card">
-            <div class="icon">🏋️</div>
-            <h3>Personal Coaching</h3>
-            <p>
-              Personalized fitness guidance designed around
-              your individual goals and lifestyle.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon">🔥</div>
-            <h3>Weight Loss</h3>
-            <p>
-              Structured workouts and accountability to help
-              you work toward your weight-loss goals.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon">💪</div>
-            <h3>Strength Training</h3>
-            <p>
-              Build strength, improve fitness and become more
-              confident in your physical abilities.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon">🏠</div>
-            <h3>Home Workouts</h3>
-            <p>
-              Effective workout ideas you can follow without
-              needing a traditional gym setup.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon">🎯</div>
-            <h3>Fitness Guidance</h3>
-            <p>
-              Get practical guidance that helps you stay
-              consistent and understand your training.
-            </p>
-          </div>
-
-          <div class="service-card">
-            <div class="icon">⚡</div>
-            <h3>Fitness Challenges</h3>
-            <p>
-              Stay motivated with structured challenges that
-              encourage consistency and progress.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PROGRAMS -->
-
-    <section class="programs" id="programs">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <span class="eyebrow">PROGRAMS</span>
-
-          <h2>
-            Choose your next challenge.
-          </h2>
-
-          <p>
-            Start from where you are and build toward where
-            you want to be.
-          </p>
-
-        </div>
-
-
-        <div class="program-grid">
-
-          <div class="program">
-
-            <small>START HERE</small>
-
-            <h3>Beginner Fit</h3>
-
-            <p>
- 
+<header>
+<div class="container">
+<nav>
+
+<a href="#home" class="logo">
+Train With <span>Abby</span>
+</a>
+
+<button class="menu" onclick="toggleMenu()">☰</button>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#programs">Programs</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li>
+<a class="nav-btn"
+href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I'm%20interested%20in%20your%20fitness%20coaching."
+target="_blank">Start Training</a>
+</li>
+</ul>
+
+</nav>
+</div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+<div>
+<span class="tag">PERSONAL FITNESS COACHING</span>
+
+<h1>
+Build Strength.<br>
+Build <span>Confidence.</span>
+</h1>
+
+<p>
+Train smarter, stay consistent and become stronger
+with practical fitness coaching designed around your goals.
+</p>
+
+<div class="buttons">
+<a class="btn primary"
+href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I'm%20interested%20in%20your%20fitness%20coaching."
+target="_blank">
+Start Your Journey →
+</a>
+
+<a class="btn secondary" href="#programs">
+Explore Programs
+</a>
+</div>
+</div>
+
+<div>
+<img class="hero-img"
+src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85"
+alt="Fitness training">
+</div>
+
+</div>
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+<div class="container">
+<div class="stats-box">
+
+<div class="stat">
+<h2>100%</h2>
+<p>Goal Focused</p>
+</div>
+
+<div class="stat">
+<h2>1:1</h2>
+<p>Personal Support</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Motivation &amp; Guidance</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+<div class="container about-grid">
+
+<div>
+<img class="about-img"
+src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=85"
+alt="Fitness coaching">
+</div>
+
+<div>
+<span class="tag">MEET ABBY</span>
+
+<h2>Fitness is more than just a workout.</h2>
+
+<p>
+Train With Abby helps people build healthier habits,
+improve their fitness and become more confident.
+</p>
+
+<p>
+Whether you're starting your journey or ready to
+take your training further, your goals come first.
+</p>
+
+<ul class="checks">
+<li>Personalized training guidance</li>
+<li>Simple practical workouts</li>
+<li>Accountability and motivation</li>
+<li>Progress-focused approach</li>
+</ul>
+
+<a class="btn primary"
+href="https://wa.me/2348030425401?text=Hi%20Abby!%20I'd%20like%20to%20learn%20more%20about%20your%20fitness%20coaching."
+target="_blank">
+Talk With Abby
+</a>
+</div>
+
+</div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+<div class="container">
+
+<div class="heading">
+<span class="tag">WHAT I OFFER</span>
+<h2>Training designed around you.</h2>
+<p>
+Choose the support that matches your fitness goals.
+</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🏋️</div>
+<h3>Personal Coaching</h3>
+<p>Personalized guidance based on your goals and lifestyle.</p>
+</div>
+
+<div class="card">
+<div class="icon">🔥</div>
+<h3>Weight Loss</h3>
+<p>Structured training and accountability for your goals.</p>
+</div>
+
+<div class="card">
+<div class="icon">💪</div>
+<h3>Strength Training</h3>
+<p>Build strength and improve your physical fitness.</p>
+</div>
+
+<div class="card">
+<div class="icon">🏠</div>
+<h3>Home Workouts</h3>
+<p>Workout options that can be done from home.</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Fitness Guidance</h3>
+<p>Practical guidance to help you stay consistent.</p>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Fitness Challenges</h3>
+<p>Structured challenges designed to keep you motivated.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+<div class="container">
+
+<div class="heading">
+<span class="tag">PROGRAMS</span>
+<h2>Choose your next challenge.</h2>
+<p>
+Start where you are and work toward your fitness goals.
+</p>
+</div>
+
+<div class="cards">
+
+<div class="program">
+<small>START HERE</small>
+<h3>Beginner Fit</h3>
+<p>For people starting their fitness journey.</p>
+
+<ul>
+<li>Beginner workouts</li>
+<li>Fitness guidance</li>
+<li>Consistency support</li>
+<li>Goal setting</li>
+</ul>
+
+<a class="btn secondary"
+href="https://wa.me/2348030425401?text=Hi%20Abby!%20I'm%20interested%20in%20the%20Beginner%20Fit%20program."
+target="_blank">
+Ask About This
+</a>
+</div>
+
+
+<div class="program featured">
+<small>MOST POPULAR</small>
+<h3>Total Transformation</h3>
+<p>A structured approach for people ready to take training seriously.</p>
+
+<ul>
+<li>Personalized training</li>
+<li>Goal-focused workouts</li>
+<li>Accountability</li>
+<li>Progress guidance</li>
+</ul>
+
+<a class="btn primary"
+href="https://wa.me/2348030425401?text=Hi%20Abby!%20I'm%20interested%20in%20the%20Total%20Transformation%20program."
+target="_blank">
+Get Started
+</a>
+</div>
+
+
+<div class="program">
+<small>LEVEL UP</small>
+<h3>Strong &amp; Fit</h3>
+<p>For people who want to improve strength and fitness.</p>
+
+<ul>
+<li>Strength training</li>
+<li>Workout guidance</li>
+<li>Progress tracking</li>
+<li>Motivation support</li>
+</ul>
+
+<a class="btn secondary"
+href="https://wa.me/2348030425401?text=Hi%20Abby!%20I'm%20interested%20in%20the%20Strong%20and%20Fit%20program."
+target="_blank">
+Ask About This
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- WHY ABBY -->
+<section>
+<div class="container">
+
+<div class="heading">
+<span class="tag">WHY TRAIN WITH ABBY?</span>
+<h2>Your goals. Your pace. Your journey.</h2>
+<p>Simple fitness guidance with consistency at the center.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Goal Focused</h3>
+<p>Every training journey starts with a clear goal.</p>
+</div>
+
+<div class="card">
+<div class="icon">🤝</div>
+<h3>Personal Support</h3>
+<p>Get guidance and accountability along the way.</p>
+</div>
+
+<div class="card">
+<div class="icon">📈</div>
+<h3>Progress Mindset</h3>
+<p>Focus on steady improvement rather than shortcuts.</p>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Stay Consistent</h3>
+<p>Build routines that fit your lifestyle.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+<div class="container">
+
+<div class="heading">
+<span class="tag">CLIENT EXPERIENCE</span>
+<h2>What clients can experience.</h2>
+<p>Replace these sample reviews with real client feedback.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<p>★★★★★</p>
+<p>
+“The structure made it much easier for me to stay
+consistent with my workouts.”
+</p>
+<strong>— Sarah</strong>
+</div>
+
+<div class="card">
+<p>★★★★★</p>
+<p>
+“I started enjoying my workouts instead of seeing them
+as something I had to force myself to do.”
+</p>
+<strong>— Daniel</strong>
+</div>
+
+<div class="card">
+<p>★★★★★</p>
+<p>
+“Having someone guide me and keep me accountable helped
+me take my fitness goals more seriously.”
+</p>
+<strong>— Maya</strong>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+<div class="container">
+
+<div class="heading">
+<span class="tag">FAQ</span>
+<h2>Questions? Let's answer them.</h2>
+</div>
+
+<div class="faq-box">
+
+<details>
+<summary>Do I need gym experience?</summary>
+<p>
+No. Beginners can start with simple, appropriate workouts
+and gradually progress.
+</p>
+</details>
+
+<details>
+<summary>Can I train from home?</summary>
+<p>
+Yes. Home workout options can be discussed depending on
+your goals and available equipment.
+</p>
+</details>
+
+<details>
+<summary>Can the program be personalized?</summary>
+<p>
+Yes. Training can be discussed around your goals,
+experience and lifestyle.
+</p>
+</details>
+
+<details>
+<summary>How do I get started?</summary>
+<p>
+Click any WhatsApp button and send a message to discuss
+your fitness goals.
+</p>
+</details>
+
+</div>
+</div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="cta">
+<div class="container">
+
+<div class="cta-box">
+
+<h2>Ready to start?</h2>
+
+<p>
+Take the first step toward a stronger and healthier you.
+</p>
+
+<a class="btn"
+href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I'm%20interested%20in%20your%20fitness%20coaching.%20I'd%20like%20to%20know%20more%20about%20the%20programs%20and%20how%20I%20can%20get%20started."
+target="_blank">
+Chat With Abby on WhatsApp →
+</a>
+
+</div>
+</div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="container">
+
+<div class="logo">
+Train With <span>Abby</span>
+</div>
+
+<p>
+Fitness Coaching • Training • Guidance
+</p>
+
+<p>
+© 2026 Train With Abby. All rights reserved.
+</p>
+
+</div>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+<a
+class="whatsapp"
+href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I'm%20interested%20in%20your%20fitness%20coaching."
+target="_blank">
+☎
+</a>
+
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll("#navLinks a").forEach(function(link){
+link.addEventListener("click",function(){
+document.getElementById("navLinks").classList.remove("active");
+});
+});
+
+</script>
+
+</body>
+  </html>
