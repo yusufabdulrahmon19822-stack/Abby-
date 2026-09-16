@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Train With Abby | Personal Fitness Coach</title>
+
+  <meta
+    name="description"
+    content="Train With Abby — personalized fitness coaching, workout programs and guidance to help you become stronger, fitter and more confident."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* ================================
+       ROOT
+    ================================= */
+
+    :root {
+      --green: #0c9b6c;
+      --green-dark: #067451;
+      --green-soft: #e1f7ee;
+      --orange: #ff8a3d;
+
+      --cream: #fffdf8;
+      --white: #ffffff;
+
+      --text: #17382d;
+      --muted: #687a73;
+
+      --border: #dcece5;
+
+      --shadow:
+        0 20px 60px rgba(12, 155, 108, 0.12);
+
+      --radius: 26px;
+    }
+
+
+    /* ================================
+       RESET
+    ================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.1;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+
+    /* ================================
+       HEADER
+    ================================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+
+      background:
+        rgba(255, 253, 248, 0.88);
+
+      backdrop-filter: blur(16px);
+
+      border-bottom:
+        1px solid rgba(220, 236, 229, 0.8);
+    }
+
+    nav {
+      min-height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-cta {
+      background: var(--green);
+      color: white !important;
+
+      padding: 12px 20px;
+
+      border-radius: 50px;
+
+      box-shadow:
+        0 10px 25px rgba(12, 155, 108, 0.18);
+    }
+
+    .menu-btn {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border: none;
+      border-radius: 50%;
+
+      background: var(--green-soft);
+      color: var(--green-dark);
+
+      font-size: 1.25rem;
+
+      cursor: pointer;
+    }
+
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding: 80px 0 70px;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 430px;
+      height: 430px;
+
+      border-radius: 50%;
+
+      background: var(--green-soft);
+
+      right: -180px;
+      top: -160px;
+
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      border-radius: 50%;
+
+      border: 35px solid #fff0e5;
+
+      left: -120px;
+      bottom: 20px;
+
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 0.9fr;
+
+      align-items: center;
+
+      gap: 60px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+      gap: 8px;
+
+      background: var(--green-soft);
+      color: var(--green-dark);
+
+      padding: 8px 15px;
+
+      border-radius: 50px;
+
+      font-size: 0.8rem;
+      font-weight: 800;
+
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 8px;
+      height: 8px;
+
+      background: var(--orange);
+
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+
+      letter-spacing: -3px;
+
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-text {
+      max-width: 570px;
+
+      color: var(--muted);
+
+      font-size: 1.08rem;
+
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 15px 24px;
+
+      border-radius: 50px;
+
+      font-weight: 800;
+
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+
+      box-shadow:
+        0 14px 30px rgba(12, 155, 108, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: white;
+
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--green);
+
+      transform: translateY(-3px);
+    }
+
+
+    /* HERO IMAGE */
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      height: 580px;
+
+      object-fit: cover;
+
+      border-radius: 36px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .hero-badge {
+      position: absolute;
+
+      left: -25px;
+      bottom: 25px;
+
+      background: white;
+
+      padding: 18px 22px;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-badge strong {
+      display: block;
+
+      color: var(--green-dark);
+
+      font-size: 1.15rem;
+    }
+
+    .hero-badge small {
+      color: var(--muted);
+    }
+
+
+    /* ================================
+       STATS
+    ================================= */
+
+    .stats {
+      padding: 20px 0 70px;
+    }
+
+    .stats-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      background: var(--green);
+
+      border-radius: var(--radius);
+
+      overflow: hidden;
+
+      color: white;
+    }
+
+    .stat {
+      padding: 30px;
+
+      text-align: center;
+
+      border-right:
+        1px solid rgba(255,255,255,0.2);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+
+      margin-bottom: 5px;
+    }
+
+    .stat p {
+      opacity: 0.86;
+    }
+
+
+    /* ================================
+       GENERAL
+    ================================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+
+      margin-bottom: 45px;
+    }
+
+    .label {
+      color: var(--green);
+
+      font-size: 0.78rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      font-weight: 900;
+
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+
+    /* ================================
+       SERVICES
+    ================================= */
+
+    .services {
+      background: #f1faf6;
+    }
+
+    .service-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+
+      padding: 30px;
+
+      border-radius: var(--radius);
+
+      border:
+        1px solid var(--border);
+
+      transition: 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+
+      display: grid;
+      place-items: center;
+
+      background: var(--green-soft);
+
+      border-radius: 16px;
+
+      font-size: 1.4rem;
+
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+
+      font-size: 0.94rem;
+    }
+
+
+    /* ================================
+       ABOUT
+    ================================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.9fr 1fr;
+
+      align-items: center;
+
+      gap: 65px;
+    }
+
+    .about-image img {
+      height: 550px;
+
+      object-fit: cover;
+
+      border-radius: 32px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .about-content p {
+      color: var(--muted);
+
+      margin: 20px 0;
+    }
+
+    .check-list {
+      list-style: none;
+
+      display: grid;
+
+      gap: 14px;
+
+      margin-top: 25px;
+    }
+
+    .check-list li {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      font-weight: 700;
+    }
+
+    .check {
+      width: 27px;
+      height: 27px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--green-soft);
+
+      color: var(--green-dark);
+
+      font-size: 0.8rem;
+
+      flex-shrink: 0;
+    }
+
+
+    /* ================================
+       PROGRAMS
+    ================================= */
+
+    .program-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .program {
+      background: white;
+
+      padding: 32px;
+
+      border-radius: var(--radius);
+
+      border:
+        1px solid var(--border);
+    }
+
+    .program.featured {
+      background: var(--green);
+
+      color: white;
+
+      transform: translateY(-10px);
+
+      box-shadow: var(--shadow);
+    }
+
+    .program small {
+      color: var(--orange);
+
+      font-weight: 900;
+    }
+
+    .program.featured small {
+      color: #ffe1cf;
+    }
+
+    .program h3 {
+      font-size: 1.5rem;
+
+      margin: 12px 0;
+    }
+
+    .program p {
+      color: var(--muted);
+
+      margin-bottom: 25px;
+    }
+
+    .program.featured p {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .program ul {
+      list-style: none;
+
+      display: grid;
+
+      gap: 12px;
+    }
+
+    .program li::before {
+      content: "✓";
+
+      color: var(--green);
+
+      font-weight: 900;
+
+      margin-right: 10px;
+    }
+
+    .program.featured li::before {
+      color: #bdf4dd;
+    }
+
+
+    /* ================================
+       TESTIMONIALS
+    ================================= */
+
+    .testimonials {
+      background: #f1faf6;
+    }
+
+    .testimonial-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: white;
+
+      padding: 30px;
+
+      border-radius: var(--radius);
+
+      border:
+        1px solid var(--border);
+    }
+
+    .stars {
+      color: var(--orange);
+
+      letter-spacing: 2px;
+
+      margin-bottom: 18px;
+    }
+
+    .testimonial p {
+      color: var(--muted);
+
+      margin-bottom: 22px;
+    }
+
+    .client {
+      font-weight: 900;
+    }
+
+    .client span {
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 0.85rem;
+
+      font-weight: 400;
+    }
+
+
+    /* ================================
+       FAQ
+    ================================= */
+
+    .faq {
+      max-width: 800px;
+
+      margin: auto;
+    }
+
+    details {
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 18px;
+
+      margin-bottom: 12px;
+
+      padding: 20px;
+    }
+
+    summary {
+      cursor: pointer;
+
+      font-weight: 800;
+    }
+
+    details p {
+      color: var(--muted);
+
+      padding-top: 15px;
+    }
+
+
+    /* ================================
+       CTA
+    ================================= */
+
+    .cta-section {
+      padding: 80px 0 100px;
+    }
+
+    .cta {
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0c9b6c,
+          #19b982
+        );
+
+      color: white;
+
+      padding: 75px 35px;
+
+      text-align: center;
+
+      border-radius: 36px;
+    }
+
+    .cta::before {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      border-radius: 50%;
+
+      border:
+        45px solid rgba(255,255,255,0.08);
+
+      right: -130px;
+      top: -130px;
+    }
+
+    .cta h2 {
+      position: relative;
+
+      font-size:
+        clamp(2.3rem, 5vw, 4rem);
+
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      position: relative;
+
+      max-width: 620px;
+
+      margin:
+        auto auto 30px;
+
+      opacity: 0.9;
+    }
+
+    .cta .btn {
+      position: relative;
+
+      background: white;
+
+      color: var(--green-dark);
+    }
+
+    .cta .btn:hover {
+      transform: translateY(-3px);
+    }
+
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      padding: 35px 0;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+    .footer-content {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    footer p {
+      color: var(--muted);
+
+      font-size: 0.88rem;
+
+      margin-top: 5px;
+    }
+
+    .socials {
+      display: flex;
+
+      gap: 18px;
+
+      font-weight: 700;
+    }
+
+    .socials a:hover {
+      color: var(--green);
+    }
+
+
+    /* ================================
+       SCROLL ANIMATION
+    ================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 850px) {
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 76px;
+
+        left: 4%;
+        right: 4%;
+
+        background: white;
+
+        padding: 20px;
+
+        border-radius: 22px;
+
+        box-shadow: var(--shadow);
+
+        flex-direction: column;
+
+        align-items: stretch;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+
+        padding: 12px;
+      }
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-image img {
+        height: 440px;
+      }
+
+      .hero-badge {
+        left: 15px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .about-image img {
+        height: 440px;
+      }
+
+      .service-grid,
+      .program-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program.featured {
+        transform: none;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+
+        border-bottom:
+          1px solid rgba(255,255,255,0.2);
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .footer-content {
+        flex-direction: column;
+
+        text-align: center;
+      }
+    }
+
+
+    /* ================================
+       SMALL PHONES
+    ================================= */
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .cta {
+        padding:
+          55px 22px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =================================
+       NAVIGATION
+  ================================== -->
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a href="#home" class="logo">
+          Train With <span>Abby</span>
+        </a>
+
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#services">Services</a>
+          </li>
+
+          <li>
+            <a href="#programs">Programs</a>
+          </li>
+
+          <li>
+            <a href="#faq">FAQ</a>
+          </li>
+
+          <li>
+            <a
+              class="nav-cta"
+              href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I%27m%20interested%20in%20your%20fitness%20coaching.%20I%27d%20like%20to%20know%20more%20about%20the%20programs%20and%20how%20I%20can%20get%20started."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start Training
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =================================
+       HERO
+  ================================== -->
+
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+
+        <div class="hero-content reveal">
+
+          <div class="eyebrow">
+            Personal Fitness Coaching
+          </div>
+
+          <h1>
+            Build Strength.
+            <span>Build Confidence.</span>
+          </h1>
+
+          <p class="hero-text">
+            Your body deserves a plan that works for you.
+            Train smarter, stay consistent and become a
+            stronger version of yourself with Abby.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I%27m%20interested%20in%20your%20fitness%20coaching.%20I%27d%20like%20to%20know%20more%20about%20the%20programs%20and%20how%20I%20can%20get%20started."
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start Your Journey →
+            </a>
+
+            <a
+              href="#programs"
+              class="btn btn-secondary"
+            >
+              Explore Programs
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-image reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85"
+            alt="Fitness training"
+          >
+
+          <div class="hero-badge">
+
+            <strong>
+              Train Smarter
+            </strong>
+
+            <small>
+              Progress with purpose.
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         STATS
+    ================================== -->
+
+    <section class="stats">
+
+      <div class="container stats-grid">
+
+        <div class="stat">
+
+          <h3>
+            100%
+          </h3>
+
+          <p>
+            Goal Focused
+          </p>
+
+        </div>
+
+
+        <div class="stat">
+
+          <h3>
+            1:1
+          </h3>
+
+          <p>
+            Personal Support
+          </p>
+
+        </div>
+
+
+        <div class="stat">
+
+          <h3>
+            24/7
+          </h3>
+
+          <p>
+            Motivation & Guidance
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         SERVICES
+    ================================== -->
+
+    <section
+      class="services"
+      id="services"
+    >
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="label">
+            What Abby Offers
+          </div>
+
+          <h2>
+            Training designed around your goals.
+          </h2>
+
+          <p>
+            Whether 
