@@ -4,52 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Train With Abby | Personal Fitness Coach</title>
+  <title>Train With Abby | Fitness Coaching</title>
 
-  <meta
-    name="description"
-    content="Train With Abby — personalized fitness coaching, workout programs and guidance to help you become stronger, fitter and more confident."
-  >
+  <meta name="description" content="Train With Abby - Personal fitness coaching, strength training, weight loss and fitness guidance.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
-
-    /* ================================
-       ROOT
-    ================================= */
-
-    :root {
-      --green: #0c9b6c;
-      --green-dark: #067451;
-      --green-soft: #e1f7ee;
-      --orange: #ff8a3d;
-
-      --cream: #fffdf8;
-      --white: #ffffff;
-
-      --text: #17382d;
-      --muted: #687a73;
-
-      --border: #dcece5;
-
-      --shadow:
-        0 20px 60px rgba(12, 155, 108, 0.12);
-
-      --radius: 26px;
-    }
-
-
-    /* ================================
-       RESET
-    ================================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -62,18 +26,15 @@
 
     body {
       font-family: "DM Sans", sans-serif;
-      background: var(--cream);
-      color: var(--text);
+      background: #fffdf8;
+      color: #164b3d;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: "Manrope", sans-serif;
-      line-height: 1.1;
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
     }
 
     a {
@@ -81,42 +42,23 @@
       color: inherit;
     }
 
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
     .container {
       width: min(1120px, 92%);
       margin: auto;
     }
 
-
-    /* ================================
-       HEADER
-    ================================= */
+    /* HEADER */
 
     header {
       position: sticky;
       top: 0;
-      z-index: 999;
-
-      background:
-        rgba(255, 253, 248, 0.88);
-
-      backdrop-filter: blur(16px);
-
-      border-bottom:
-        1px solid rgba(220, 236, 229, 0.8);
+      z-index: 1000;
+      background: rgba(255, 253, 248, 0.96);
+      border-bottom: 1px solid #e6eee9;
     }
 
-    nav {
-      min-height: 76px;
-
+    .nav {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -124,838 +66,567 @@
 
     .logo {
       font-family: "Manrope", sans-serif;
-      font-size: 1.25rem;
+      font-size: 27px;
       font-weight: 800;
-      color: var(--green-dark);
+      color: #087f61;
     }
 
     .logo span {
-      color: var(--orange);
+      color: #f47b35;
     }
 
     .nav-links {
-      list-style: none;
-
       display: flex;
       align-items: center;
-      gap: 28px;
-
-      font-size: 0.94rem;
-      font-weight: 700;
+      gap: 30px;
+      list-style: none;
     }
 
     .nav-links a {
-      transition: 0.25s ease;
+      font-weight: 600;
+      color: #285e50;
     }
 
     .nav-links a:hover {
-      color: var(--green);
+      color: #f47b35;
     }
 
-    .nav-cta {
-      background: var(--green);
+    .nav-btn {
+      background: #087f61;
       color: white !important;
-
       padding: 12px 20px;
-
-      border-radius: 50px;
-
-      box-shadow:
-        0 10px 25px rgba(12, 155, 108, 0.18);
+      border-radius: 30px;
     }
 
-    .menu-btn {
+    .menu {
       display: none;
-
-      width: 44px;
-      height: 44px;
-
-      border: none;
+      width: 48px;
+      height: 48px;
+      border: 0;
       border-radius: 50%;
-
-      background: var(--green-soft);
-      color: var(--green-dark);
-
-      font-size: 1.25rem;
-
-      cursor: pointer;
+      background: #e0f4ed;
+      color: #087f61;
+      font-size: 25px;
     }
 
-
-    /* ================================
-       HERO
-    ================================= */
+    /* HERO */
 
     .hero {
-      position: relative;
-      overflow: hidden;
-
-      padding: 80px 0 70px;
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 430px;
-      height: 430px;
-
-      border-radius: 50%;
-
-      background: var(--green-soft);
-
-      right: -180px;
-      top: -160px;
-
-      z-index: -1;
-    }
-
-    .hero::after {
-      content: "";
-
-      position: absolute;
-
-      width: 180px;
-      height: 180px;
-
-      border-radius: 50%;
-
-      border: 35px solid #fff0e5;
-
-      left: -120px;
-      bottom: 20px;
-
-      z-index: -1;
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at 90% 10%, #ffe4d2 0, transparent 25%),
+        radial-gradient(circle at 10% 80%, #dff5ed 0, transparent 28%),
+        #fffdf8;
     }
 
     .hero-grid {
       display: grid;
-
-      grid-template-columns:
-        1fr 0.9fr;
-
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-
-      gap: 60px;
+      gap: 55px;
     }
 
     .eyebrow {
-      display: inline-flex;
-
-      align-items: center;
-      gap: 8px;
-
-      background: var(--green-soft);
-      color: var(--green-dark);
-
+      display: inline-block;
+      background: #e2f5ee;
+      color: #087f61;
       padding: 8px 15px;
-
-      border-radius: 50px;
-
-      font-size: 0.8rem;
-      font-weight: 800;
-
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-
-      width: 8px;
-      height: 8px;
-
-      background: var(--orange);
-
-      border-radius: 50%;
+      border-radius: 30px;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 6vw, 5.5rem);
-
-      letter-spacing: -3px;
-
-      margin-bottom: 24px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(45px, 6vw, 72px);
+      line-height: 1.02;
+      color: #124d3e;
+      margin-bottom: 22px;
     }
 
     .hero h1 span {
-      color: var(--green);
+      color: #f47b35;
     }
 
-    .hero-text {
-      max-width: 570px;
-
-      color: var(--muted);
-
-      font-size: 1.08rem;
-
-      margin-bottom: 32px;
+    .hero p {
+      max-width: 550px;
+      font-size: 18px;
+      color: #5d716a;
+      margin-bottom: 30px;
     }
 
-    .hero-buttons {
+    .buttons {
       display: flex;
-
       flex-wrap: wrap;
-
       gap: 14px;
     }
 
     .btn {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
       padding: 15px 24px;
-
-      border-radius: 50px;
-
-      font-weight: 800;
-
-      transition: 0.25s ease;
+      border-radius: 35px;
+      font-weight: 700;
+      transition: 0.3s;
     }
 
     .btn-primary {
-      background: var(--green);
+      background: #087f61;
       color: white;
-
-      box-shadow:
-        0 14px 30px rgba(12, 155, 108, 0.2);
+      box-shadow: 0 10px 25px rgba(8, 127, 97, 0.2);
     }
 
     .btn-primary:hover {
-      background: var(--green-dark);
       transform: translateY(-3px);
+      background: #05684f;
     }
 
     .btn-secondary {
-      background: white;
-
-      border: 1px solid var(--border);
+      border: 2px solid #087f61;
+      color: #087f61;
     }
 
     .btn-secondary:hover {
-      border-color: var(--green);
-
-      transform: translateY(-3px);
+      background: #e2f5ee;
     }
-
-
-    /* HERO IMAGE */
 
     .hero-image {
       position: relative;
     }
 
     .hero-image img {
-      height: 580px;
-
-      object-fit: cover;
-
-      border-radius: 36px;
-
-      box-shadow: var(--shadow);
+      height: 570px;
+      border-radius: 35px;
+      box-shadow: 0 25px 60px rgba(20, 75, 61, 0.18);
     }
 
-    .hero-badge {
+    .floating-card {
       position: absolute;
-
-      left: -25px;
       bottom: 25px;
-
+      left: -25px;
       background: white;
-
       padding: 18px 22px;
-
-      border-radius: 18px;
-
-      box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.12);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+      font-weight: 700;
     }
 
-    .hero-badge strong {
+    .floating-card span {
       display: block;
-
-      color: var(--green-dark);
-
-      font-size: 1.15rem;
+      color: #f47b35;
+      font-size: 14px;
     }
 
-    .hero-badge small {
-      color: var(--muted);
-    }
-
-
-    /* ================================
-       STATS
-    ================================= */
+    /* STATS */
 
     .stats {
-      padding: 20px 0 70px;
+      padding: 35px 0;
     }
 
-    .stats-grid {
+    .stats-box {
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      background: var(--green);
-
-      border-radius: var(--radius);
-
-      overflow: hidden;
-
+      grid-template-columns: repeat(3, 1fr);
+      background: #0d9b74;
       color: white;
+      border-radius: 30px;
+      overflow: hidden;
     }
 
     .stat {
-      padding: 30px;
-
       text-align: center;
-
-      border-right:
-        1px solid rgba(255,255,255,0.2);
+      padding: 35px 20px;
+      border-right: 1px solid rgba(255,255,255,0.2);
     }
 
     .stat:last-child {
-      border-right: none;
+      border-right: 0;
     }
 
     .stat h3 {
-      font-size: 2rem;
-
-      margin-bottom: 5px;
+      font-family: "Manrope", sans-serif;
+      font-size: 42px;
     }
 
     .stat p {
-      opacity: 0.86;
+      font-size: 17px;
+      opacity: 0.9;
     }
 
-
-    /* ================================
-       GENERAL
-    ================================= */
+    /* GENERAL */
 
     section {
-      padding: 100px 0;
+      padding: 90px 0;
     }
 
     .section-heading {
-      max-width: 680px;
-
-      margin-bottom: 45px;
-    }
-
-    .label {
-      color: var(--green);
-
-      font-size: 0.78rem;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.5px;
-
-      font-weight: 900;
-
-      margin-bottom: 12px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
     }
 
     .section-heading h2 {
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(34px, 5vw, 50px);
+      color: #124d3e;
       margin-bottom: 15px;
     }
 
     .section-heading p {
-      color: var(--muted);
+      color: #687a73;
+      font-size: 17px;
     }
 
+    /* ABOUT */
 
-    /* ================================
-       SERVICES
-    ================================= */
-
-    .services {
-      background: #f1faf6;
+    .about {
+      background: #eff9f5;
     }
-
-    .service-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 20px;
-    }
-
-    .service-card {
-      background: white;
-
-      padding: 30px;
-
-      border-radius: var(--radius);
-
-      border:
-        1px solid var(--border);
-
-      transition: 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-
-      box-shadow: var(--shadow);
-    }
-
-    .service-icon {
-      width: 54px;
-      height: 54px;
-
-      display: grid;
-      place-items: center;
-
-      background: var(--green-soft);
-
-      border-radius: 16px;
-
-      font-size: 1.4rem;
-
-      margin-bottom: 22px;
-    }
-
-    .service-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      color: var(--muted);
-
-      font-size: 0.94rem;
-    }
-
-
-    /* ================================
-       ABOUT
-    ================================= */
 
     .about-grid {
       display: grid;
-
-      grid-template-columns:
-        0.9fr 1fr;
-
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
       align-items: center;
-
-      gap: 65px;
     }
 
     .about-image img {
-      height: 550px;
+      height: 520px;
+      border-radius: 30px;
+    }
 
-      object-fit: cover;
-
-      border-radius: 32px;
-
-      box-shadow: var(--shadow);
+    .about-content h2 {
+      font-family: "Manrope", sans-serif;
+      font-size: 46px;
+      line-height: 1.1;
+      margin-bottom: 20px;
     }
 
     .about-content p {
-      color: var(--muted);
-
-      margin: 20px 0;
+      color: #60736b;
+      margin-bottom: 18px;
+      font-size: 17px;
     }
 
     .check-list {
       list-style: none;
-
-      display: grid;
-
-      gap: 14px;
-
-      margin-top: 25px;
+      margin: 25px 0;
     }
 
     .check-list li {
-      display: flex;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
 
+    .check-list li::before {
+      content: "✓";
+      display: inline-flex;
       align-items: center;
-
-      gap: 12px;
-
-      font-weight: 700;
-    }
-
-    .check {
-      width: 27px;
-      height: 27px;
-
-      display: grid;
-      place-items: center;
-
+      justify-content: center;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
-
-      background: var(--green-soft);
-
-      color: var(--green-dark);
-
-      font-size: 0.8rem;
-
-      flex-shrink: 0;
+      background: #d9f2e9;
+      color: #087f61;
+      margin-right: 10px;
     }
 
+    /* SERVICES */
 
-    /* ================================
-       PROGRAMS
-    ================================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 30px;
+      background: white;
+      border: 1px solid #e2ebe7;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(20, 75, 61, 0.1);
+    }
+
+    .icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      background: #e0f4ed;
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #71817b;
+    }
+
+    /* PROGRAMS */
+
+    .programs {
+      background: #fff4eb;
+    }
 
     .program-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
     }
 
     .program {
       background: white;
-
-      padding: 32px;
-
-      border-radius: var(--radius);
-
-      border:
-        1px solid var(--border);
+      border-radius: 28px;
+      padding: 35px;
+      border: 1px solid #f0dfd2;
     }
 
     .program.featured {
-      background: var(--green);
-
-      color: white;
-
-      transform: translateY(-10px);
-
-      box-shadow: var(--shadow);
+      border: 2px solid #f47b35;
+      transform: translateY(-8px);
     }
 
     .program small {
-      color: var(--orange);
-
-      font-weight: 900;
-    }
-
-    .program.featured small {
-      color: #ffe1cf;
+      color: #f47b35;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     .program h3 {
-      font-size: 1.5rem;
-
-      margin: 12px 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 28px;
+      margin: 10px 0;
     }
 
     .program p {
-      color: var(--muted);
-
-      margin-bottom: 25px;
-    }
-
-    .program.featured p {
-      color: rgba(255,255,255,0.82);
+      color: #6d7974;
+      margin-bottom: 22px;
     }
 
     .program ul {
       list-style: none;
+      margin-bottom: 25px;
+    }
 
-      display: grid;
-
-      gap: 12px;
+    .program li {
+      margin-bottom: 10px;
     }
 
     .program li::before {
       content: "✓";
-
-      color: var(--green);
-
-      font-weight: 900;
-
-      margin-right: 10px;
+      color: #087f61;
+      font-weight: bold;
+      margin-right: 8px;
     }
 
-    .program.featured li::before {
-      color: #bdf4dd;
+    /* WHY */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
     }
 
-
-    /* ================================
-       TESTIMONIALS
-    ================================= */
-
-    .testimonials {
-      background: #f1faf6;
+    .why-card {
+      background: #f1f8f5;
+      border-radius: 25px;
+      padding: 30px;
     }
+
+    .why-card h3 {
+      margin: 12px 0 8px;
+      font-size: 22px;
+    }
+
+    .why-card p {
+      color: #687a73;
+    }
+
+    /* TESTIMONIALS */
 
     .testimonial-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     .testimonial {
-      background: white;
-
       padding: 30px;
-
-      border-radius: var(--radius);
-
-      border:
-        1px solid var(--border);
+      border-radius: 25px;
+      background: white;
+      border: 1px solid #e4ebe8;
     }
 
     .stars {
-      color: var(--orange);
-
-      letter-spacing: 2px;
-
-      margin-bottom: 18px;
+      color: #f47b35;
+      font-size: 20px;
+      margin-bottom: 15px;
     }
 
     .testimonial p {
-      color: var(--muted);
-
-      margin-bottom: 22px;
+      color: #596c65;
+      margin-bottom: 20px;
     }
 
-    .client {
-      font-weight: 900;
+    .testimonial strong {
+      color: #164b3d;
     }
 
-    .client span {
-      display: block;
-
-      color: var(--muted);
-
-      font-size: 0.85rem;
-
-      font-weight: 400;
-    }
-
-
-    /* ================================
-       FAQ
-    ================================= */
+    /* FAQ */
 
     .faq {
-      max-width: 800px;
+      background: #eff9f5;
+    }
 
+    .faq-container {
+      max-width: 800px;
       margin: auto;
     }
 
     details {
       background: white;
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 18px;
-
       margin-bottom: 12px;
-
-      padding: 20px;
+      border-radius: 18px;
+      padding: 20px 24px;
+      border: 1px solid #dce9e4;
     }
 
     summary {
       cursor: pointer;
-
-      font-weight: 800;
+      font-weight: 700;
+      color: #174f40;
     }
 
     details p {
-      color: var(--muted);
-
+      color: #687a73;
       padding-top: 15px;
     }
 
+    /* CTA */
 
-    /* ================================
-       CTA
-    ================================= */
-
-    .cta-section {
-      padding: 80px 0 100px;
+    .final-cta {
+      padding: 90px 0;
     }
 
-    .cta {
-      position: relative;
-
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          135deg,
-          #0c9b6c,
-          #19b982
-        );
-
+    .cta-box {
+      background: #087f61;
       color: white;
-
-      padding: 75px 35px;
-
+      border-radius: 35px;
+      padding: 70px 30px;
       text-align: center;
-
-      border-radius: 36px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .cta::before {
+    .cta-box::before {
       content: "";
-
       position: absolute;
-
-      width: 300px;
-      height: 300px;
-
+      width: 250px;
+      height: 250px;
+      background: rgba(255,255,255,0.08);
       border-radius: 50%;
-
-      border:
-        45px solid rgba(255,255,255,0.08);
-
-      right: -130px;
-      top: -130px;
+      top: -100px;
+      right: -50px;
     }
 
-    .cta h2 {
+    .cta-box h2 {
       position: relative;
-
-      font-size:
-        clamp(2.3rem, 5vw, 4rem);
-
-      margin-bottom: 18px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(35px, 5vw, 55px);
+      margin-bottom: 15px;
     }
 
-    .cta p {
+    .cta-box p {
       position: relative;
-
-      max-width: 620px;
-
-      margin:
-        auto auto 30px;
-
+      max-width: 600px;
+      margin: 0 auto 25px;
       opacity: 0.9;
+      font-size: 18px;
     }
 
-    .cta .btn {
+    .cta-box .btn {
       position: relative;
-
-      background: white;
-
-      color: var(--green-dark);
+      background: #f47b35;
+      color: white;
     }
 
-    .cta .btn:hover {
-      transform: translateY(-3px);
-    }
-
-
-    /* ================================
-       FOOTER
-    ================================= */
+    /* FOOTER */
 
     footer {
-      padding: 35px 0;
-
-      border-top:
-        1px solid var(--border);
+      background: #123f34;
+      color: white;
+      padding: 45px 0 25px;
     }
 
     .footer-content {
       display: flex;
-
-      align-items: center;
-
       justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
 
-      gap: 20px;
+    footer .logo {
+      color: white;
     }
 
     footer p {
-      color: var(--muted);
-
-      font-size: 0.88rem;
-
-      margin-top: 5px;
+      color: #c2d5cf;
     }
 
-    .socials {
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      margin-top: 30px;
+      padding-top: 20px;
+      color: #abc1ba;
+      font-size: 14px;
+    }
+
+    /* FLOATING WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
       display: flex;
-
-      gap: 18px;
-
-      font-weight: 700;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    .socials a:hover {
-      color: var(--green);
-    }
-
-
-    /* ================================
-       SCROLL ANIMATION
-    ================================= */
-
-    .reveal {
-      opacity: 0;
-
-      transform:
-        translateY(25px);
-
-      transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-
-      transform:
-        translateY(0);
-    }
-
-
-    /* ================================
-       MOBILE
-    ================================= */
+    /* MOBILE */
 
     @media (max-width: 850px) {
 
-      .menu-btn {
-        display: block;
-      }
-
       .nav-links {
         display: none;
-
         position: absolute;
-
-        top: 76px;
-
-        left: 4%;
-        right: 4%;
-
-        background: white;
-
-        padding: 20px;
-
-        border-radius: 22px;
-
-        box-shadow: var(--shadow);
-
+        top: 78px;
+        left: 0;
+        width: 100%;
+        background: #fffdf8;
+        padding: 25px;
         flex-direction: column;
-
         align-items: stretch;
+        border-bottom: 1px solid #e5ece9;
       }
 
       .nav-links.active {
@@ -963,44 +634,49 @@
       }
 
       .nav-links a {
-        display: block;
+        padding: 10px;
+      }
 
-        padding: 12px;
+      .nav-btn {
+        text-align: center;
+      }
+
+      .menu {
+        display: block;
       }
 
       .hero {
-        padding-top: 55px;
+        padding: 50px 0;
       }
 
-      .hero-grid {
+      .hero-grid,
+      .about-grid,
+      .why-grid {
         grid-template-columns: 1fr;
-
-        gap: 40px;
-      }
-
-      .hero-image {
-        order: -1;
       }
 
       .hero-image img {
-        height: 440px;
+        height: 450px;
       }
 
-      .hero-badge {
+      .floating-card {
         left: 15px;
       }
 
-      .about-grid {
+      .stats-box {
         grid-template-columns: 1fr;
-
-        gap: 40px;
       }
 
-      .about-image img {
-        height: 440px;
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
       }
 
-      .service-grid,
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .services-grid,
       .program-grid,
       .testimonial-grid {
         grid-template-columns: 1fr;
@@ -1010,172 +686,129 @@
         transform: none;
       }
 
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stat {
-        border-right: none;
-
-        border-bottom:
-          1px solid rgba(255,255,255,0.2);
-      }
-
-      .stat:last-child {
-        border-bottom: none;
-      }
-
       section {
-        padding: 75px 0;
+        padding: 65px 0;
+      }
+
+      .about-image img {
+        height: 430px;
       }
 
       .footer-content {
         flex-direction: column;
-
         text-align: center;
       }
     }
 
+    @media (max-width: 480px) {
 
-    /* ================================
-       SMALL PHONES
-    ================================= */
-
-    @media (max-width: 500px) {
-
-      .hero h1 {
-        letter-spacing: -2px;
+      .logo {
+        font-size: 23px;
       }
 
-      .hero-buttons {
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .buttons {
         flex-direction: column;
       }
 
-      .hero-buttons .btn {
+      .btn {
         width: 100%;
       }
 
-      .cta {
-        padding:
-          55px 22px;
+      .hero-image img {
+        height: 390px;
+      }
+
+      .section-heading h2,
+      .about-content h2 {
+        font-size: 36px;
+      }
+
+      .stat h3 {
+        font-size: 38px;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =================================
-       NAVIGATION
-  ================================== -->
+  <!-- HEADER -->
 
   <header>
+    <div class="container nav">
 
-    <div class="container">
+      <a href="#home" class="logo">
+        Train With <span>Abby</span>
+      </a>
 
-      <nav>
+      <button class="menu" onclick="toggleMenu()">
+        ☰
+      </button>
 
-        <a href="#home" class="logo">
-          Train With <span>Abby</span>
-        </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#faq">FAQ</a></li>
 
-        <button
-          class="menu-btn"
-          id="menuBtn"
-          aria-label="Open menu"
-        >
-          ☰
-        </button>
-
-        <ul class="nav-links" id="navLinks">
-
-          <li>
-            <a href="#home">Home</a>
-          </li>
-
-          <li>
-            <a href="#about">About</a>
-          </li>
-
-          <li>
-            <a href="#services">Services</a>
-          </li>
-
-          <li>
-            <a href="#programs">Programs</a>
-          </li>
-
-          <li>
-            <a href="#faq">FAQ</a>
-          </li>
-
-          <li>
-            <a
-              class="nav-cta"
-              href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I%27m%20interested%20in%20your%20fitness%20coaching.%20I%27d%20like%20to%20know%20more%20about%20the%20programs%20and%20how%20I%20can%20get%20started."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Start Training
-            </a>
-          </li>
-
-        </ul>
-
-      </nav>
+        <li>
+          <a
+            class="nav-btn"
+            href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I'm%20interested%20in%20your%20fitness%20coaching.%20I'd%20like%20to%20know%20more%20about%20the%20programs%20and%20how%20I%20can%20get%20started."
+            target="_blank">
+            Start Training
+          </a>
+        </li>
+      </ul>
 
     </div>
-
   </header>
 
 
+  <!-- HERO -->
 
-  <!-- =================================
-       HERO
-  ================================== -->
+  <main>
 
-  <main id="home">
-
-    <section class="hero">
+    <section class="hero" id="home">
 
       <div class="container hero-grid">
 
+        <div>
 
-        <div class="hero-content reveal">
-
-          <div class="eyebrow">
-            Personal Fitness Coaching
-          </div>
+          <span class="eyebrow">
+            PERSONAL FITNESS COACHING
+          </span>
 
           <h1>
-            Build Strength.
-            <span>Build Confidence.</span>
+            Build Strength.<br>
+            Build <span>Confidence.</span>
           </h1>
 
-          <p class="hero-text">
+          <p>
             Your body deserves a plan that works for you.
-            Train smarter, stay consistent and become a
-            stronger version of yourself with Abby.
+            Train smarter, stay consistent and become stronger
+            with personalized fitness guidance from Abby.
           </p>
 
-          <div class="hero-buttons">
+          <div class="buttons">
 
             <a
-              href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I%27m%20interested%20in%20your%20fitness%20coaching.%20I%27d%20like%20to%20know%20more%20about%20the%20programs%20and%20how%20I%20can%20get%20started."
               class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+              href="https://wa.me/2348030425401?text=Hi%20Abby!%20I%20found%20Train%20With%20Abby%20and%20I'm%20interested%20in%20your%20fitness%20coaching.%20I'd%20like%20to%20know%20more%20about%20the%20programs%20and%20how%20I%20can%20get%20started."
+              target="_blank">
               Start Your Journey →
             </a>
 
-            <a
-              href="#programs"
-              class="btn btn-secondary"
-            >
+            <a class="btn btn-secondary" href="#programs">
               Explore Programs
             </a>
 
@@ -1183,24 +816,15 @@
 
         </div>
 
-
-        <div class="hero-image reveal">
+        <div class="hero-image">
 
           <img
-            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85"
-            alt="Fitness training"
-          >
+            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85"
+            alt="Fitness training">
 
-          <div class="hero-badge">
-
-            <strong>
-              Train Smarter
-            </strong>
-
-            <small>
-              Progress with purpose.
-            </small>
-
+          <div class="floating-card">
+            <span>YOUR GOAL</span>
+            Train. Improve. Repeat. 💪
           </div>
 
         </div>
@@ -1210,50 +834,28 @@
     </section>
 
 
-
-    <!-- =================================
-         STATS
-    ================================== -->
+    <!-- STATS -->
 
     <section class="stats">
 
-      <div class="container stats-grid">
+      <div class="container">
 
-        <div class="stat">
+        <div class="stats-box">
 
-          <h3>
-            100%
-          </h3>
+          <div class="stat">
+            <h3>100%</h3>
+            <p>Goal Focused</p>
+          </div>
 
-          <p>
-            Goal Focused
-          </p>
+          <div class="stat">
+            <h3>1:1</h3>
+            <p>Personal Support</p>
+          </div>
 
-        </div>
-
-
-        <div class="stat">
-
-          <h3>
-            1:1
-          </h3>
-
-          <p>
-            Personal Support
-          </p>
-
-        </div>
-
-
-        <div class="stat">
-
-          <h3>
-            24/7
-          </h3>
-
-          <p>
-            Motivation & Guidance
-          </p>
+          <div class="stat">
+            <h3>24/7</h3>
+            <p>Motivation & Guidance</p>
+          </div>
 
         </div>
 
@@ -1262,27 +864,175 @@
     </section>
 
 
+    <!-- ABOUT -->
 
-    <!-- =================================
-         SERVICES
-    ================================== -->
+    <section class="about" id="about">
 
-    <section
-      class="services"
-      id="services"
-    >
+      <div class="container about-grid">
 
-      <div class="container">
+        <div class="about-image">
 
-        <div class="section-heading reveal">
+          <img
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=85"
+            alt="Personal fitness coaching">
 
-          <div class="label">
-            What Abby Offers
-          </div>
+        </div>
+
+        <div class="about-content">
+
+          <span class="eyebrow">MEET ABBY</span>
 
           <h2>
-            Training designed around your goals.
+            Fitness is more than just a workout.
           </h2>
 
           <p>
-            Whether 
+            Train With Abby is built around helping people
+            create healthier habits, build strength and feel
+            more confident in their bodies.
+          </p>
+
+          <p>
+            Whether you're just starting your fitness journey
+            or looking to take your training to another level,
+            your workouts can be structured around your goals.
+          </p>
+
+          <ul class="check-list">
+            <li>Personalized training guidance</li>
+            <li>Simple and practical workouts</li>
+            <li>Accountability and motivation</li>
+            <li>Progress-focused approach</li>
+          </ul>
+
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/2348030425401?text=Hi%20Abby!%20I'd%20like%20to%20learn%20more%20about%20your%20fitness%20coaching."
+            target="_blank">
+            Talk With Abby
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">WHAT I OFFER</span>
+
+          <h2>
+            Training designed around you.
+          </h2>
+
+          <p>
+            Whether your goal is to lose weight, get stronger
+            or simply become more active, there's a plan for you.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="icon">🏋️</div>
+            <h3>Personal Coaching</h3>
+            <p>
+              Personalized fitness guidance designed around
+              your individual goals and lifestyle.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🔥</div>
+            <h3>Weight Loss</h3>
+            <p>
+              Structured workouts and accountability to help
+              you work toward your weight-loss goals.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">💪</div>
+            <h3>Strength Training</h3>
+            <p>
+              Build strength, improve fitness and become more
+              confident in your physical abilities.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🏠</div>
+            <h3>Home Workouts</h3>
+            <p>
+              Effective workout ideas you can follow without
+              needing a traditional gym setup.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🎯</div>
+            <h3>Fitness Guidance</h3>
+            <p>
+              Get practical guidance that helps you stay
+              consistent and understand your training.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">⚡</div>
+            <h3>Fitness Challenges</h3>
+            <p>
+              Stay motivated with structured challenges that
+              encourage consistency and progress.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROGRAMS -->
+
+    <section class="programs" id="programs">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">PROGRAMS</span>
+
+          <h2>
+            Choose your next challenge.
+          </h2>
+
+          <p>
+            Start from where you are and build toward where
+            you want to be.
+          </p>
+
+        </div>
+
+
+        <div class="program-grid">
+
+          <div class="program">
+
+            <small>START HERE</small>
+
+            <h3>Beginner Fit</h3>
+
+            <p>
+ 
